@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=78.1.1"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "plotly-themes"
+version = "0.1.0"
+description = "Collection of themes that can be applied to Plotly with a single import."
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [{ name = "AdventuresInDataScience" }]
+license = { text = "MIT" }
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+]
+
+[tool.setuptools.packages.find]
+include = ["plotly_themes*"]
