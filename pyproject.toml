@@ -16,6 +16,9 @@ classifiers = [
   "License :: OSI Approved :: MIT License",
   "Operating System :: OS Independent",
 ]
+dependencies = [
+  "plotly>=5",
+]
 
 [tool.setuptools.packages.find]
 include = ["plotly_themes*"]

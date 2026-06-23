@@ -6,3 +6,9 @@ Collection of various themes which can be applied to plotly with a single import
 ```bash
 pip install plotly-themes
 ```
+
+## Usage
+
+```python
+import plotly_themes
+```
