@@ -10,5 +10,10 @@ pip install plotly-themes
 ## Usage
 
 ```python
-import plotly_themes
+import plotly.express as px
+from plotly_themes import apply_theme
+
+fig = px.scatter(px.data.iris(), x="sepal_width", y="sepal_length")
+apply_theme(fig, template="plotly_dark")
+fig.show()
 ```
