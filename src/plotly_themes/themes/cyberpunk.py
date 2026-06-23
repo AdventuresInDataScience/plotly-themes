@@ -17,9 +17,10 @@ TEMPLATE = go.layout.Template(
         "paper_bgcolor": _BG,
         "plot_bgcolor": _PANEL,
         "font": {"family": _FONT, "size": 14, "color": _TEXT},
-        "title": {"font": {"family": _FONT, "size": 26, "color": _CYAN}},
+        "title": {"font": {"family": "Orbitron, " + _FONT, "size": 26, "color": _CYAN}},
         # Saturated neons; translucent versions are applied in the data traces.
-        "colorway": [_CYAN, _MAGENTA, "#FCEE09", "#A6FF00", "#9D00FF", "#FF6C11"],
+        "colorway": [_CYAN, _MAGENTA, "#FCEE09", "#A6FF00", "#9D00FF", "#FF6C11",
+                     "#00FF9F", "#FF3CAC", "#2D5BFF", "#FF1F4F"],
         "colorscale": {
             "sequential": [[0, "#10151F"], [0.5, _MAGENTA], [1, _CYAN]],
             "diverging": [[0, _MAGENTA], [0.5, "#10151F"], [1, _CYAN]],

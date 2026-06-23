@@ -26,8 +26,17 @@ from typing import List
 import plotly.io as pio
 
 from . import themes
+from ._subplots import enrich_subplots
+from .effects import add_glow
+from .fonts import enable_fonts, font_face_css
 
-__all__ = ["register_all", "registered_themes"]
+__all__ = [
+    "register_all",
+    "registered_themes",
+    "add_glow",
+    "enable_fonts",
+    "font_face_css",
+]
 
 _REGISTERED: List[str] = []
 
@@ -46,6 +55,8 @@ def register_all() -> List[str]:
         template = getattr(module, "TEMPLATE", None)
         if name is None or template is None:
             continue
+        # Propagate the 2D look to 3D/polar/geo/ternary subplots too.
+        enrich_subplots(template)
         pio.templates[name] = template
         _REGISTERED.append(name)
     return list(_REGISTERED)

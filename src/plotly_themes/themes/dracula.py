@@ -19,8 +19,8 @@ TEMPLATE = go.layout.Template(
         "font": {"family": _FONT, "size": 14, "color": _TEXT},
         "title": {"font": {"family": _FONT, "size": 24, "color": _PURPLE}},
         "colorway": [
-            "#FF79C6", "#BD93F9", "#8BE9FD", "#50FA7B",
-            "#FFB86C", "#FF5555", "#F1FA8C", "#6272A4",
+            "#FF79C6", "#BD93F9", "#8BE9FD", "#50FA7B", "#FFB86C",
+            "#FF5555", "#F1FA8C", "#6272A4", "#FF92E0", "#69FF94",
         ],
         "colorscale": {
             "sequential": [[0, "#282A36"], [0.5, "#BD93F9"], [1, "#FF79C6"]],

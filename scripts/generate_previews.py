@@ -15,6 +15,10 @@ import plotly_themes
 
 OUT_DIR = Path(__file__).resolve().parent.parent / "docs" / "images"
 
+# Themes whose look depends on the add_glow() effect (a template alone can't add
+# the translucent halo traces).
+GLOW_THEMES = {"star_wars", "cyberpunk", "synthwave"}
+
 
 def sample_figure(theme: str) -> go.Figure:
     """A representative figure exercising bars, lines and markers."""
@@ -36,6 +40,8 @@ def sample_figure(theme: str) -> go.Figure:
         height=500,
         margin=dict(l=70, r=30, t=70, b=60),
     )
+    if theme in GLOW_THEMES:
+        plotly_themes.add_glow(fig)
     return fig
 
 

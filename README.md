@@ -40,6 +40,8 @@ uv sync
 
 ## Themes
 
+22 themes and counting:
+
 | | |
 |---|---|
 | **matrix** — phosphor green, digital step lines | **cyberpunk** — neon glow fills, rounded bars |
@@ -50,20 +52,69 @@ uv sync
 | ![synthwave](docs/images/synthwave.png) | ![blueprint](docs/images/blueprint.png) |
 | **financial_times** — FT salmon paper, serif | **lego** — rounded brick bars, "stud" markers |
 | ![financial_times](docs/images/financial_times.png) | ![lego](docs/images/lego.png) |
-| **coke** — Coca-Cola ribbon splines, red wash | **xkcd** — hand-drawn comic, fat spline lines |
-| ![coke](docs/images/coke.png) | ![xkcd](docs/images/xkcd.png) |
+| **coke** — Coca-Cola ribbon splines, red wash | **barbie** — hot-pink candy bars, script title |
+| ![coke](docs/images/coke.png) | ![barbie](docs/images/barbie.png) |
+| **vintage_comic** — Ben-Day dots, Silver-Age inks | **xkcd** — hand-drawn comic, fat spline lines |
+| ![vintage_comic](docs/images/vintage_comic.png) | ![xkcd](docs/images/xkcd.png) |
+| **newsprint** — halftone-dot bars, newspaper serif | **minecraft** — blocky earthy palette, pixel font |
+| ![newsprint](docs/images/newsprint.png) | ![minecraft](docs/images/minecraft.png) |
+| **nasa** — deep-space navy, telemetry markers | **gameboy** — DMG green LCD, 8-bit pixel steps |
+| ![nasa](docs/images/nasa.png) | ![gameboy](docs/images/gameboy.png) |
 | **tableau** — classic Tableau 10 palette | **powerbi** — Power BI palette, rounded columns |
 | ![tableau](docs/images/tableau.png) | ![powerbi](docs/images/powerbi.png) |
-| **nike** — bold condensed type, value labels | **gameboy** — DMG green LCD, 8-bit pixel steps |
-| ![nike](docs/images/nike.png) | ![gameboy](docs/images/gameboy.png) |
-| **amber_terminal** — vintage amber CRT readout | **nord** — cool, muted arctic palette |
-| ![amber_terminal](docs/images/amber_terminal.png) | ![nord](docs/images/nord.png) |
-| **dracula** — dark slate with vivid pastels | |
-| ![dracula](docs/images/dracula.png) | |
+| **nike** — bold condensed type, value labels | **amber_terminal** — vintage amber CRT readout |
+| ![nike](docs/images/nike.png) | ![amber_terminal](docs/images/amber_terminal.png) |
+| **nord** — cool, muted arctic palette | **dracula** — dark slate with vivid pastels |
+| ![nord](docs/images/nord.png) | ![dracula](docs/images/dracula.png) |
 
-> **Note on the `xkcd` theme:** the hand-drawn look relies on a comic font. For the
-> full effect, install [Humor Sans / xkcd Script](https://github.com/ipython/xkcd-font);
-> otherwise it falls back to Comic Sans, then a plain sans-serif.
+## Works with any chart type
+
+The colours, fonts, colourscales, hover and legend styling apply to **all** chart
+types — bar, line, scatter, pie, heatmap, histogram, box, violin, sunburst, and so
+on. On import, each theme also propagates its background and axis colours to the
+non-cartesian subplots (3D `scene`, `polar`/radar, `geo`/maps, `ternary`), so those
+match the theme too rather than falling back to a clashing default. (Themes that
+don't set a background, like `nike`, keep Plotly's defaults there.)
+
+## Glow effect
+
+A Plotly *template* can only set per-trace defaults — it can't add the extra
+translucent traces needed for a real neon/lightsaber **glow**. So that lives in a
+small helper that post-processes a figure, drawing progressively wider, fainter
+copies beneath each line:
+
+```python
+import plotly_themes
+import plotly.express as px
+
+fig = px.line(df, x="t", y="v", template="star_wars")
+plotly_themes.add_glow(fig)        # bloom under every line
+fig.show()
+```
+
+Great with `star_wars`, `cyberpunk` and `synthwave`. Tunable via
+`add_glow(fig, layers=4, width_growth=4.0, max_opacity=0.18)`.
+
+## Custom fonts
+
+Several themes use bundled open-source ([SIL OFL](src/plotly_themes/fonts/LICENSE-OFL.txt))
+fonts — e.g. *Press Start 2P* (gameboy/minecraft), *Bangers* (vintage_comic),
+*Pacifico* (barbie), *Orbitron*, *VT323*, *Share Tech Mono* and *Comic Neue*.
+
+A figure's text is drawn by whatever displays it, so the font has to be available
+to that renderer. In a notebook, register the bundled web fonts once and they'll
+render without installing anything:
+
+```python
+import plotly_themes
+plotly_themes.enable_fonts()       # injects @font-face into the notebook
+```
+
+`plotly_themes.font_face_css()` returns the same rules as a string for embedding
+in exported HTML. For **static image export** (kaleido), install the `.ttf` files
+in [`src/plotly_themes/fonts/`](src/plotly_themes/fonts/) to your OS instead, since
+a headless renderer reads from the system font directories. Themes always fall
+back to sensible system fonts when a bundled font isn't available.
 
 List the themes this package registered at runtime:
 
@@ -98,9 +149,10 @@ That's it — `import plotly_themes` will find and register it automatically.
 ## Regenerating the preview images
 
 The images above are produced by [`scripts/generate_previews.py`](scripts/generate_previews.py),
-which renders a sample figure for each theme. It uses Plotly's static image export
+which renders a sample figure for each theme (applying `add_glow()` to the glow
+themes). It uses Plotly's static image export
 ([kaleido](https://github.com/plotly/Kaleido)), which requires a Chrome/Chromium
-install:
+install; bundled fonts must be installed to the OS to appear in these static images:
 
 ```bash
 uv run python scripts/generate_previews.py

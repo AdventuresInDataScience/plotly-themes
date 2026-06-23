@@ -19,11 +19,12 @@ TEMPLATE = go.layout.Template(
         "plot_bgcolor": _PANEL,
         "font": {"family": _FONT, "size": 15, "color": _TEXT},
         "title": {"font": {"family": _FONT, "size": 30, "color": _CRAWL}},
-        # Lightsaber colours: blue, red, green, purple, crawl-yellow, white.
-        "colorway": ["#2E80FF", "#FF2B2B", "#44E544", "#B05CFF", "#FFE81F", "#F4F4F4"],
+        # Lightsaber colours: electric blue, red, vivid green, purple, crawl-yellow, white.
+        "colorway": ["#1FA2FF", "#FF2B2B", "#4DFF5A", "#B05CFF", "#FFE81F", "#F4F4F4",
+                     "#FF8C1A", "#00E5D0", "#FF4FA3", "#8AB4FF"],
         "colorscale": {
             "sequential": [[0, "#050608"], [0.5, "#B05CFF"], [1, "#FFE81F"]],
-            "diverging": [[0, "#2E80FF"], [0.5, "#050608"], [1, "#FF2B2B"]],
+            "diverging": [[0, "#1FA2FF"], [0.5, "#050608"], [1, "#FF2B2B"]],
         },
         "hovermode": "x unified",
         "hoverlabel": {
@@ -58,7 +59,7 @@ TEMPLATE = go.layout.Template(
                 line={"width": 3.5, "shape": "spline", "smoothing": 0.6},
                 marker={"size": 9, "line": {"color": "rgba(255,255,255,0.85)", "width": 2}},
                 fill="tozeroy",
-                fillcolor="rgba(46, 128, 255, 0.10)",
+                fillcolor="rgba(31, 162, 255, 0.10)",
             )
         ],
         "bar": [

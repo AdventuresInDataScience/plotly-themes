@@ -30,6 +30,8 @@ build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/plotly_themes"]
+# Bundle the font binaries and their licences alongside the Python code.
+artifacts = ["**/*.ttf", "**/LICENSE-OFL.txt", "**/NOTICE.md"]
 
 [dependency-groups]
 dev = [

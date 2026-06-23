@@ -30,12 +30,33 @@ def test_theme_template_is_valid(name):
 
 
 @pytest.mark.parametrize("name", REGISTERED)
+def test_theme_palette_has_depth(name):
+    # Every theme should support at least medium-cardinality charts without the
+    # colourway repeating too soon.
+    colorway = pio.templates[name].layout.colorway
+    assert len(colorway) >= 10, f"{name} colourway only has {len(colorway)} colours"
+
+
+@pytest.mark.parametrize("name", REGISTERED)
 def test_theme_applies_to_a_figure(name):
     fig = go.Figure()
     fig.add_bar(x=[1, 2, 3], y=[3, 1, 2])
     fig.update_layout(template=name)
     # Validate by serialising — raises if the template is malformed.
     assert fig.to_plotly_json()["layout"]["template"] is not None
+
+
+@pytest.mark.parametrize("name", REGISTERED)
+def test_dark_themes_style_noncartesian_subplots(name):
+    # Themes that set a plot background should propagate it to 3D/polar/geo/
+    # ternary subplots so those chart types match the theme too.
+    lay = pio.templates[name].layout
+    if lay.plot_bgcolor is None and lay.paper_bgcolor is None:
+        pytest.skip(f"{name} sets no background")
+    expected = lay.plot_bgcolor or lay.paper_bgcolor
+    assert lay.polar.bgcolor == expected
+    assert lay.scene.xaxis.backgroundcolor == expected
+    assert lay.ternary.bgcolor == expected
 
 
 def test_register_all_is_idempotent():

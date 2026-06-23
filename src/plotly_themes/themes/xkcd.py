@@ -13,7 +13,7 @@ NAME = "xkcd"
 
 _INK = "#000000"
 _BG = "#FFFFFF"
-_FONT = "xkcd Script, Humor Sans, Comic Sans MS, Comic Sans, cursive"
+_FONT = "Comic Neue, xkcd Script, Humor Sans, Comic Sans MS, Comic Sans, cursive"
 
 TEMPLATE = go.layout.Template(
     layout={
@@ -21,7 +21,8 @@ TEMPLATE = go.layout.Template(
         "plot_bgcolor": _BG,
         "font": {"family": _FONT, "size": 16, "color": _INK},
         "title": {"font": {"family": _FONT, "size": 28, "color": _INK}},
-        "colorway": ["#1F77B4", "#E41A1C", "#4DAF4A", "#FF7F00", "#984EA3", "#000000"],
+        "colorway": ["#1F77B4", "#E41A1C", "#4DAF4A", "#FF7F00", "#984EA3", "#000000",
+                     "#A65628", "#F781BF", "#FFD92F", "#17BECF"],
         "hovermode": "closest",
         "hoverlabel": {"font": {"family": _FONT}},
         "xaxis": {

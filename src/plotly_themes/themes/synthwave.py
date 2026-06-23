@@ -19,7 +19,8 @@ TEMPLATE = go.layout.Template(
         "plot_bgcolor": _PANEL,
         "font": {"family": _FONT, "size": 14, "color": _TEXT},
         "title": {"font": {"family": _FONT, "size": 26, "color": _PINK}},
-        "colorway": [_PINK, _CYAN, "#D1F7FF", "#FF6C11", "#7700FF", "#F9C80E"],
+        "colorway": [_PINK, _CYAN, "#D1F7FF", "#FF6C11", "#7700FF", "#F9C80E",
+                     "#FE53BB", "#08F7FE", "#B967FF", "#FF8B00"],
         "colorscale": {
             "sequential": [[0, "#2B213A"], [0.5, "#7700FF"], [1, _PINK]],
             "diverging": [[0, _CYAN], [0.5, "#2B213A"], [1, _PINK]],

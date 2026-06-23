@@ -18,9 +18,10 @@ TEMPLATE = go.layout.Template(
         "paper_bgcolor": _BG,
         "plot_bgcolor": _BG,
         "font": {"family": _FONT, "size": 15, "color": _TEXT},
-        "title": {"font": {"family": _FONT, "size": 28, "color": _ORANGE}},
+        "title": {"font": {"family": "Orbitron, " + _FONT, "size": 28, "color": _ORANGE}},
         # Canonical LCARS panel colours.
-        "colorway": ["#FF9900", "#CC99CC", "#9999FF", "#FFCC66", "#CC6666", "#99CCFF"],
+        "colorway": ["#FF9900", "#CC99CC", "#9999FF", "#FFCC66", "#CC6666", "#99CCFF",
+                     "#FF9966", "#CC99FF", "#FFCC99", "#6699CC"],
         "colorscale": {
             "sequential": [[0, "#1a1000"], [0.5, "#CC6666"], [1, "#FF9900"]],
         },

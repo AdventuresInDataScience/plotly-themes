@@ -12,7 +12,7 @@ _BG = "#0A3D62"
 _TEXT = "#EAF2FB"
 _GRID = "#1B5A86"
 _LINE = "#BBD7EE"
-_FONT = "Consolas, 'Courier New', monospace"
+_FONT = "Share Tech Mono, Consolas, 'Courier New', monospace"
 
 TEMPLATE = go.layout.Template(
     layout={
@@ -20,7 +20,8 @@ TEMPLATE = go.layout.Template(
         "plot_bgcolor": _BG,
         "font": {"family": _FONT, "size": 14, "color": _TEXT},
         "title": {"font": {"family": _FONT, "size": 24, "color": "#FFFFFF"}},
-        "colorway": ["#FFFFFF", "#BBD7EE", "#7FB2DD", "#FFD166", "#A8E6CF", "#FF8B94"],
+        "colorway": ["#FFFFFF", "#BBD7EE", "#7FB2DD", "#FFD166", "#A8E6CF", "#FF8B94",
+                     "#5FA8E0", "#FFE39E", "#9FD8CB", "#E0E7EF"],
         "colorscale": {
             "sequential": [[0, "#0A3D62"], [0.5, "#7FB2DD"], [1, "#FFFFFF"]],
         },

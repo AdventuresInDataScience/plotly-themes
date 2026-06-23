@@ -17,7 +17,8 @@ TEMPLATE = go.layout.Template(
         "font": {"family": _FONT, "size": 15, "color": _INK},
         "title": {"font": {"family": _FONT, "size": 28, "color": _RED}},
         # Coke red, charcoal, silver and a darker brand red.
-        "colorway": ["#F40009", "#1A1A1A", "#B0B0B0", "#A60005", "#E6E6E6", "#7A0003"],
+        "colorway": ["#F40009", "#1A1A1A", "#B0B0B0", "#A60005", "#E6E6E6", "#7A0003",
+                     "#D9534F", "#8C8C8C", "#3D0000", "#5A5A5A"],
         "colorscale": {
             "sequential": [[0, "#FFE5E6"], [0.5, "#F40009"], [1, "#7A0003"]],
         },

@@ -20,8 +20,8 @@ TEMPLATE = go.layout.Template(
         "title": {"font": {"family": _FONT, "size": 24, "color": _TEXT}},
         # Aurora + Frost.
         "colorway": [
-            "#88C0D0", "#BF616A", "#A3BE8C", "#EBCB8B",
-            "#B48EAD", "#5E81AC", "#D08770", "#8FBCBB",
+            "#88C0D0", "#BF616A", "#A3BE8C", "#EBCB8B", "#B48EAD",
+            "#5E81AC", "#D08770", "#8FBCBB", "#81A1C1", "#D8DEE9",
         ],
         "colorscale": {
             "sequential": [[0, "#2E3440"], [0.5, "#5E81AC"], [1, "#88C0D0"]],

@@ -21,7 +21,8 @@ TEMPLATE = go.layout.Template(
         "font": {"family": _FONT, "size": 15, "color": _TEXT},
         "title": {"font": {"family": _FONT, "size": 26, "color": "#000000"}},
         # FT brand colours: blue, claret, teal, slate, purple, oxford.
-        "colorway": ["#0F5499", "#990F3D", "#0D7680", "#FF8833", "#593380", "#262A33"],
+        "colorway": ["#0F5499", "#990F3D", "#0D7680", "#FF8833", "#593380", "#262A33",
+                     "#1E88C7", "#C0392B", "#4DA17F", "#A6761D"],
         "colorscale": {
             "sequential": [[0, "#FFF1E5"], [0.5, "#FF8833"], [1, "#990F3D"]],
             "diverging": [[0, "#0F5499"], [0.5, "#FFF1E5"], [1, "#990F3D"]],
