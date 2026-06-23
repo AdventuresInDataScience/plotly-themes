@@ -1,0 +1,8 @@
+README.md
+pyproject.toml
+plotly_themes/__init__.py
+plotly_themes.egg-info/PKG-INFO
+plotly_themes.egg-info/SOURCES.txt
+plotly_themes.egg-info/dependency_links.txt
+plotly_themes.egg-info/requires.txt
+plotly_themes.egg-info/top_level.txt

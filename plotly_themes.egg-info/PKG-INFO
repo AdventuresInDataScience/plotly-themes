@@ -1,0 +1,33 @@
+Metadata-Version: 2.4
+Name: plotly-themes
+Version: 0.1.0
+Summary: Collection of themes that can be applied to Plotly with a single import.
+Author: AdventuresInDataScience
+License: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Requires-Dist: plotly<6,>=5
+
+# plotly-themes
+Collection of various themes which can be applied to plotly with a single import
+
+## Installation
+
+```bash
+pip install plotly-themes
+```
+
+## Usage
+
+```python
+import plotly.express as px
+from plotly_themes import apply_theme
+
+fig = px.scatter(px.data.iris(), x="sepal_width", y="sepal_length")
+apply_theme(fig, template="plotly_dark")
+fig.show()
+```
