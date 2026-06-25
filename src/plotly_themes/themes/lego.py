@@ -9,7 +9,9 @@ NAME = "lego"
 _SKY = "#4FA6DD"
 _SKY_LIGHT = "#6FB9E8"
 _INK = "#1B1B1B"
-_FONT = "Helvetica Neue, Helvetica, Arial, sans-serif"
+# "LEGO" is the brand font (if the viewer has it); "Lilita One" is the bundled
+# bold-rounded open-source lookalike that ships with the package.
+_FONT = "LEGO, 'Lilita One', Helvetica Neue, Helvetica, Arial, sans-serif"
 
 TEMPLATE = go.layout.Template(
     layout={

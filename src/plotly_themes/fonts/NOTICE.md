@@ -13,5 +13,7 @@ the copyright of its respective authors.
 | Comic Neue | `Comic Neue` | https://fonts.google.com/specimen/Comic+Neue |
 | Bangers | `Bangers` | https://fonts.google.com/specimen/Bangers |
 | Pacifico | `Pacifico` | https://fonts.google.com/specimen/Pacifico |
+| Lilita One | `Lilita One` | https://fonts.google.com/specimen/Lilita+One |
+| Great Vibes | `Great Vibes` | https://fonts.google.com/specimen/Great+Vibes |
 
 These were obtained from the Google Fonts repository (https://github.com/google/fonts).

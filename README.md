@@ -99,7 +99,12 @@ Great with `star_wars`, `cyberpunk` and `synthwave`. Tunable via
 
 Several themes use bundled open-source ([SIL OFL](src/plotly_themes/fonts/LICENSE-OFL.txt))
 fonts — e.g. *Press Start 2P* (gameboy/minecraft), *Bangers* (vintage_comic),
-*Pacifico* (barbie), *Orbitron*, *VT323*, *Share Tech Mono* and *Comic Neue*.
+*Pacifico* (barbie), *Lilita One* (a LEGO-style rounded face for lego), *Great
+Vibes* (a Spencerian script for the coke title), *Orbitron*, *VT323*,
+*Share Tech Mono* and *Comic Neue*. Trademarked brand fonts (the real LEGO and
+Coca-Cola faces) are listed first in those themes' font stacks and used if you
+have them installed, but can't be redistributed — the bundled lookalikes are the
+fallback.
 
 A figure's text is drawn by whatever displays it, so the font has to be available
 to that renderer. In a notebook, register the bundled web fonts once and they'll

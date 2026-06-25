@@ -8,6 +8,10 @@ NAME = "coke"
 _RED = "#F40009"
 _BG = "#FFFFFF"
 _INK = "#1A1A1A"
+# Title uses the flowing Coca-Cola script: the brand "Coca Cola ii" font if the
+# viewer has it, otherwise the bundled open-source "Great Vibes" Spencerian
+# script. Body stays a readable serif (a script is unreadable for axis labels).
+_TITLE_FONT = "'Coca Cola ii', 'Great Vibes', cursive"
 _FONT = "Georgia, 'Times New Roman', serif"
 
 TEMPLATE = go.layout.Template(
@@ -15,7 +19,7 @@ TEMPLATE = go.layout.Template(
         "paper_bgcolor": _BG,
         "plot_bgcolor": _BG,
         "font": {"family": _FONT, "size": 15, "color": _INK},
-        "title": {"font": {"family": _FONT, "size": 28, "color": _RED}},
+        "title": {"font": {"family": _TITLE_FONT, "size": 34, "color": _RED}},
         # Coke red, charcoal, silver and a darker brand red.
         "colorway": ["#F40009", "#1A1A1A", "#B0B0B0", "#A60005", "#E6E6E6", "#7A0003",
                      "#D9534F", "#8C8C8C", "#3D0000", "#5A5A5A"],

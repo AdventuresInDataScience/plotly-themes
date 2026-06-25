@@ -38,6 +38,8 @@ FONT_FILES: Dict[str, List[Tuple[str, str, str]]] = {
     ],
     "Bangers": [("Bangers-Regular.ttf", "400", "normal")],
     "Pacifico": [("Pacifico-Regular.ttf", "400", "normal")],
+    "Lilita One": [("LilitaOne-Regular.ttf", "400", "normal")],
+    "Great Vibes": [("GreatVibes-Regular.ttf", "400", "normal")],
 }
 
 
